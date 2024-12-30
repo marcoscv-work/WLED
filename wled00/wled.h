@@ -98,10 +98,10 @@
   #endif
   #include "esp_task_wdt.h"
 
-  #ifndef WLED_DISABLE_ESPNOW
-    #include <esp_now.h>
-    #include <QuickEspNow.h>
-  #endif
+  // #ifndef WLED_DISABLE_ESPNOW
+  //   #include <esp_now.h>
+  //   #include <QuickEspNow.h>
+  // #endif
 #endif
 #include <Wire.h>
 #include <SPI.h>
@@ -127,27 +127,27 @@
 #include "src/dependencies/timezone/Timezone.h"
 #include "src/dependencies/toki/Toki.h"
 
-#ifndef WLED_DISABLE_ALEXA
-  #define ESPALEXA_ASYNC
-  #define ESPALEXA_NO_SUBPAGE
-  #define ESPALEXA_MAXDEVICES 10
-  // #define ESPALEXA_DEBUG
-  #include "src/dependencies/espalexa/Espalexa.h"
-  #include "src/dependencies/espalexa/EspalexaDevice.h"
-#endif
+// #ifndef WLED_DISABLE_ALEXA
+//   #define ESPALEXA_ASYNC
+//   #define ESPALEXA_NO_SUBPAGE
+//   #define ESPALEXA_MAXDEVICES 10
+//   // #define ESPALEXA_DEBUG
+//   #include "src/dependencies/espalexa/Espalexa.h"
+//   #include "src/dependencies/espalexa/EspalexaDevice.h"
+// #endif
 
-#ifdef WLED_ENABLE_DMX
- #if defined(ESP8266) || defined(CONFIG_IDF_TARGET_ESP32C3) || defined(CONFIG_IDF_TARGET_ESP32S2)
-  #include "src/dependencies/dmx/ESPDMX.h"
- #else //ESP32
-  #include "src/dependencies/dmx/SparkFunDMX.h"
- #endif
-#endif
+// #ifdef WLED_ENABLE_DMX
+//  #if defined(ESP8266) || defined(CONFIG_IDF_TARGET_ESP32C3) || defined(CONFIG_IDF_TARGET_ESP32S2)
+//   #include "src/dependencies/dmx/ESPDMX.h"
+//  #else //ESP32
+//   #include "src/dependencies/dmx/SparkFunDMX.h"
+//  #endif
+// #endif
 
 #include "src/dependencies/e131/ESPAsyncE131.h"
-#ifndef WLED_DISABLE_MQTT
-#include "src/dependencies/async-mqtt-client/AsyncMqttClient.h"
-#endif
+// #ifndef WLED_DISABLE_MQTT
+// #include "src/dependencies/async-mqtt-client/AsyncMqttClient.h"
+// #endif
 
 #define ARDUINOJSON_DECODE_UNICODE 0
 #include "src/dependencies/json/AsyncJson-v6.h"
@@ -219,11 +219,11 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
   Comment out this error message to build regardless.
 #endif
 
-#ifndef WLED_DISABLE_INFRARED
-  #include <IRremoteESP8266.h>
-  #include <IRrecv.h>
-  #include <IRutils.h>
-#endif
+// #ifndef WLED_DISABLE_INFRARED
+//   #include <IRremoteESP8266.h>
+//   #include <IRrecv.h>
+//   #include <IRutils.h>
+// #endif
 
 //Filesystem to use for preset and config files. SPIFFS or LittleFS on ESP8266, SPIFFS only on ESP32 (now using LITTLEFS port by lorol)
 #ifdef ESP8266
